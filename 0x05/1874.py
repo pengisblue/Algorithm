@@ -23,19 +23,19 @@ while index < n:  # 수열이 완성될 때 까지
         pop_append(push_tmp, pop_tmp)
         results.append('-')
         index += 1
-        continue
-    for i in range(len(numbers)):
-        num = numbers[-1]
-        pop_append(numbers, push_tmp)
-        results.append('+')
-        if num == sequence[index]:
-            break
-    pop_append(push_tmp, pop_tmp)
-    results.append('-')
-    index += 1
+    else:
+        for i in range(len(numbers)):
+            num = numbers[-1]
+            pop_append(numbers, push_tmp)
+            results.append('+')
+            if num == sequence[index]:
+                break
+        pop_append(push_tmp, pop_tmp)
+        results.append('-')
+        index += 1
 
 if is_sequence:
     for result in results:
         print(result)
 else:
-    print('No')
+    print('NO')
