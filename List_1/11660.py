@@ -1,7 +1,7 @@
 import sys
 input = sys.stdin.readline
 
-N, M= map(int, input().split())  # 크기, 횟수
+N, M = map(int, input().split())  # 크기, 횟수
 numbers = [list(map(int, input().split())) for i in range(N)]
 prefix_sums = [[0] * N]
 
