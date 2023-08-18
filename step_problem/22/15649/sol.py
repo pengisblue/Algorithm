@@ -3,21 +3,23 @@ sys.stdin = open('input2.txt')
 input = sys.stdin.readline
 
 
-def permutation(idx, n, cnt, m):
+def combi(idx, n, cnt, m, result):
     if cnt == m:
-
+        all_.append(result)
         return
     elif idx == n:
         return
     else:
-        bit[idx] = numbers[idx]
-        permutation(idx+1, n, cnt+1, m)
-        bit[idx] = 0
-        permutation(idx+1, n, cnt, m)
+        combi(idx+1, n, cnt+1, m, result+[numbers[idx]])
+        combi(idx+1, n, cnt, m, result)
         return
+
+
+def permu(idx, n):
 
 
 N, M = map(int, input().split())
 numbers = list(range(1, N+1))
-bit = [0] * N
-permutation(0, N, 0, M)
+all_ = []
+permutation(0, N, 0, M, [])
+print(all_)
