@@ -1,25 +1,18 @@
 import sys
-sys.stdin = open('input2.txt')
+sys.stdin = open('input3.txt')
 input = sys.stdin.readline
 
 
-def combi(idx, n, cnt, m, result):
-    if cnt == m:
-        all_.append(result)
-        return
-    elif idx == n:
-        return
-    else:
-        combi(idx+1, n, cnt+1, m, result+[numbers[idx]])
-        combi(idx+1, n, cnt, m, result)
-        return
-
-
-def permu(idx, n):
+def permu(result):      # result : 순열을 담을 리스트
+    if len(result) == M:
+        print(*result)
+    for i in numbers:
+        if i not in result:
+            result.append(i)    # i를 추가하고 
+            permu(result)       # 재귀를 한 후
+            result.pop()        # 원상복귀 -> 다음 for문 돌려야해서
 
 
 N, M = map(int, input().split())
 numbers = list(range(1, N+1))
-all_ = []
-permutation(0, N, 0, M, [])
-print(all_)
+permu([])
