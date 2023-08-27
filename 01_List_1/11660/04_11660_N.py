@@ -1,4 +1,5 @@
 import sys
+sys.stdin = open('input1.txt')
 input = sys.stdin.readline
 
 N, M = map(int, input().split())  # 크기, 횟수
