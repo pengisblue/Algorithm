@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('input3.txt')
+sys.stdin = open('input2.txt')
 input = sys.stdin.readline
 
 
